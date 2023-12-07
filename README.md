@@ -1,2 +1,2 @@
-# Happy_Minds
-This is an application that supports mental health
+# BillPal
+This is a mobile application that offers personalized financial guidance and support to help users achieve their financial goals
