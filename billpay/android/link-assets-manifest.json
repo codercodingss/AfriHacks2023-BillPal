@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/AvertaDemoPE-Regular.otf",
+      "sha1": "e5f85a77c565a014c4e40f911b68ea322059ca1d"
+    },
+    {
+      "path": "assets/fonts/AvertaDemoPE-Regular.ttf",
+      "sha1": "a1c21a210fc285024c99b765abf78cca9b47c46e"
+    }
+  ]
+}
