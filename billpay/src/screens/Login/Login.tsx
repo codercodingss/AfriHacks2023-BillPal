@@ -13,6 +13,8 @@ import {ClosedEye} from '../../icons/ClosedEye';
 import {OpenEye} from '../../icons/OpenEye';
 import CheckBox from '@react-native-community/checkbox';
 import styles from './loginStyles';
+import {useAppDispatch} from '../../src/store';
+import {signIn} from '../../src';
 
 const loginValidationSchema = yup.object().shape({
   email: yup.string().email().required('Email is Required'),
@@ -25,6 +27,7 @@ const loginValidationSchema = yup.object().shape({
 const Login = ({navigation}: {navigation: any}) => {
   const [showPassword, setShowPass] = useState<boolean>(false);
   const [remember, setRemember] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
   const goBack = () => navigation.goBack();
   return (
     <ScrollView style={styles.layout}>
@@ -35,6 +38,7 @@ const Login = ({navigation}: {navigation: any}) => {
         validationSchema={loginValidationSchema}
         onSubmit={values => {
           console.log(values);
+          dispatch(signIn(values));
         }}>
         {({
           handleChange,
