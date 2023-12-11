@@ -75,7 +75,7 @@ const Login = ({navigation}: {navigation: any}) => {
                 textContentType={'password'}
                 secureTextEntry={!showPassword}
                 placeholderTextColor={'#AAB7C6'}
-                style={{padding: 0}}
+                style={{padding: 0, color: '#000'}}
               />
               <TouchableOpacity
                 style={{height: 15}}

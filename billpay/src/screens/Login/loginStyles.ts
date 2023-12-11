@@ -77,6 +77,7 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
     paddingHorizontal: 13,
     marginHorizontal: 24,
+    color: '#000',
   },
   errorText: {
     color: '#DC1F21',
@@ -85,6 +86,12 @@ const styles = StyleSheet.create({
   highlighted: {
     borderColor: '#DC1F21',
     borderWidth: 1,
+  },
+  contentContainer: {
+    flex: 1,
+    alignItems: 'center',
+    zIndex: 44,
+    backgroundColor: 'red',
   },
 });
 

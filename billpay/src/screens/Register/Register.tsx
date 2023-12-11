@@ -1,7 +1,7 @@
 import {
+  Alert,
   Pressable,
   ScrollView,
-  StyleSheet,
   Text,
   TextInput,
   TouchableOpacity,
@@ -14,6 +14,8 @@ import * as yup from 'yup';
 import {ClosedEye, OpenEye} from '../../icons';
 import CheckBox from '@react-native-community/checkbox';
 import {Warning} from '../../icons/Warning';
+import Verification from './Verification';
+import {RegisterStyles} from './RegisterStyles';
 
 const passwordRules = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
@@ -30,8 +32,14 @@ const loginValidationSchema = yup.object().shape({
 const Register = ({navigation}: {navigation: any}) => {
   const [showPassword, setShowPass] = useState<boolean>(false);
   const [conditionsAccepted, setAccepted] = useState<boolean>(false);
+  const [modalOpen, setOpen] = useState<boolean>(false);
   return (
     <ScrollView style={[RegisterStyles.layout, {paddingTop: 35}]}>
+      <Verification
+        modalVisible={modalOpen}
+        setModalVisible={setOpen}
+        navigation={navigation}
+      />
       <Text style={styles.title}>{'Welcome to Billpal'}</Text>
       <Text
         style={{
@@ -47,6 +55,9 @@ const Register = ({navigation}: {navigation: any}) => {
         initialValues={{email: '', password: '', username: ''}}
         validationSchema={loginValidationSchema}
         onSubmit={values => {
+          if (!conditionsAccepted)
+            Alert.alert('Please accept the terms and conditions !');
+          else setOpen(true);
           console.log(values);
         }}>
         {({
@@ -103,7 +114,7 @@ const Register = ({navigation}: {navigation: any}) => {
                 textContentType={'password'}
                 secureTextEntry={!showPassword}
                 placeholderTextColor={'#AAB7C6'}
-                style={{padding: 0}}
+                style={{padding: 0, color: '#000'}}
               />
               <TouchableOpacity
                 style={{height: 15}}
@@ -202,36 +213,3 @@ const Register = ({navigation}: {navigation: any}) => {
 };
 
 export default Register;
-
-const RegisterStyles = StyleSheet.create({
-  blueBtn: {
-    alignItems: 'center',
-    backgroundColor: '#ffffff',
-    borderColor: '#74b3ce',
-    borderRadius: 16,
-    borderWidth: 1,
-    paddingVertical: 23,
-    marginBottom: 12,
-    marginHorizontal: 24,
-  },
-  blueBtnText: {
-    color: '#172429',
-    fontSize: 16,
-  },
-  layout: {
-    backgroundColor: '#FCFFFA',
-    paddingTop: 18,
-    paddingBottom: 8,
-  },
-  row: {
-    alignItems: 'center',
-    flexDirection: 'row',
-  },
-  requirements: {
-    paddingHorizontal: 24,
-    marginBottom: 50,
-  },
-  requirement: {
-    color: '#847CAB',
-  },
-});
