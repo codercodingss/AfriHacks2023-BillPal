@@ -1,18 +1,9 @@
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import React, {useCallback, useMemo, useRef, useState} from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 import {Formik} from 'formik';
 import DatePicker from 'react-native-date-picker';
 import CustomBottomsheet from '../../components/Bottomsheet/Bottomsheet';
-import {BottomsheetStyles} from '../../components/Bottomsheet/BottomsheetStyles';
-import SuccessfulModal from '../../components/SuccessfulModal/SuccessfulModal';
 import {ArrowDown} from '../../icons/ArrowDown';
 import {Calendar} from '../../icons/Calendar';
 import styles from '../Login/loginStyles';
@@ -39,7 +30,7 @@ const RegistrationFinalStep = ({navigation}: {navigation: any}) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['25%', '87%'], []);
+  const snapPoints = useMemo(() => ['25%', '87%', '95%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -51,8 +42,8 @@ const RegistrationFinalStep = ({navigation}: {navigation: any}) => {
       <Header
         text={'Back'}
         action={() => navigation.goBack()}
-        step={4}
-        totalSteps={4}
+        step={3}
+        totalSteps={3}
       />
       <Text style={styles.title}>{'Bill Management'}</Text>
       <Text

@@ -17,8 +17,8 @@ const RegisterStepFour = ({navigation}: {navigation: any}) => {
       <Header
         text={'Back'}
         action={() => navigation.goBack()}
-        step={3}
-        totalSteps={4}
+        step={2}
+        totalSteps={3}
       />
       <Text style={styles.title}>{'Link your bank details'}</Text>
       <Text

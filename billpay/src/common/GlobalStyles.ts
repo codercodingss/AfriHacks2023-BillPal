@@ -11,6 +11,7 @@ export const FontFamily = {
 /* font sizes */
 export const FontSize = {
   bodyLight_size: 12,
+  headerH5_size: 32,
   headerH6_size: 24,
   headerH7_size: 16,
   bodyLight1_size: 10,
@@ -25,6 +26,7 @@ export const Color = {
   gray06: '#646464',
   accentBase: '#4682b4',
   text05: '#f3f8fc',
+  primary02: '#273C45',
   primary03: '#3a5a67',
   primary05: '#8BC0D6',
   m3SysLightOnSurfaceVariant: '#49454f',
@@ -39,6 +41,8 @@ export const Color = {
   colorLightsteelblue: '#c1d5e6',
   gray05: '#969696',
   m3SysLightSecondaryContainer: '#e8def8',
+  succes: '#0F9F0F',
+  warning: '#D48903',
 };
 /* Paddings */
 export const Padding = {

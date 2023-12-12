@@ -62,7 +62,7 @@ const RegisterStepTwo = ({navigation}: {navigation: any}) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['25%', '50%'], []);
+  const snapPoints = useMemo(() => ['25%', '50%', '70%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {
@@ -80,7 +80,7 @@ const RegisterStepTwo = ({navigation}: {navigation: any}) => {
         text={'Back'}
         action={() => navigation.goBack()}
         step={1}
-        totalSteps={4}
+        totalSteps={3}
       />
       <Text style={styles.title}>{'Create personal budget goal'}</Text>
       <Text

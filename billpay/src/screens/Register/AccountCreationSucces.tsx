@@ -1,7 +1,10 @@
 import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React from 'react';
+import {useAppDispatch} from '../../src/store';
+import {signIn} from '../../src';
 
 const AccountCreationSucces = () => {
+  const dispatch = useAppDispatch();
   return (
     <View style={styles.layout}>
       <View>
@@ -12,7 +15,11 @@ const AccountCreationSucces = () => {
         style={{alignSelf: 'center'}}
         source={require('../../../assets/images/career.png')}
       />
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity
+        style={styles.btn}
+        onPress={() =>
+          dispatch(signIn({email: 'hh@jj.voo', password: 'gfmm45'}))
+        }>
         <Text style={styles.btnText}>Continue</Text>
       </TouchableOpacity>
     </View>

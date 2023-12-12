@@ -9,6 +9,7 @@ import {CardIcon} from '../icons/CardIcon';
 import {Wallet} from '../icons/WalletIcon';
 import {ProfileIcon} from '../icons/ProfileIcon';
 import HomeNavigationContainer from './HomeNavStack';
+import BudgetingNavigationContainer from './BudgetingNavStack';
 const Tab = createBottomTabNavigator();
 
 function HomeTabs() {
@@ -42,8 +43,8 @@ function HomeTabs() {
         }}
       />
       <Tab.Screen
-        name="Budgeting"
-        component={Budgeting}
+        name="BudgetingContainer"
+        component={BudgetingNavigationContainer}
         options={{
           tabBarIcon: ({color, size}) => <Wallet stroke={color || '#646464'} />,
         }}

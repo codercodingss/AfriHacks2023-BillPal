@@ -65,7 +65,12 @@ const Home = ({navigation}: {navigation: any}) => {
             icon={<BillManagement />}
           />
           <ShortCut text="Budgeting" icon={<BillManagement />} />
-          <ShortCut text="Financial Education" icon={<BillManagement />} />
+          <ShortCut
+            text="Financial Education"
+            link="FinancialEducation"
+            icon={<BillManagement />}
+            navigation={navigation}
+          />
         </View>
       </View>
 
@@ -89,7 +94,11 @@ const Home = ({navigation}: {navigation: any}) => {
         </View>
       </View>
       <View style={[styles.billsUpdates1, {marginTop: 20}]}>
-        <SubSection text="Transaction history" navigation="nv" link="kk" />
+        <SubSection
+          text="Transaction history"
+          navigation={navigation}
+          link="TransactionHistory"
+        />
         <View style={[styles.upComingBills1, styles.bannersLayout1]}>
           <Text style={[styles.yesterday, styles.yesterdayLayout]}>
             Yesterday
@@ -131,7 +140,7 @@ const styles = StyleSheet.create({
     textAlign: 'left',
   },
   shortcutsPosition: {
-    marginLeft: 12,
+    marginLeft: 23,
   },
   shortCutsTypo: {
     color: Color.text01,

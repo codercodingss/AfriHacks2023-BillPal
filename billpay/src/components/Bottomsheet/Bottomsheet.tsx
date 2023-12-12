@@ -15,6 +15,18 @@ const CustomBottomsheet = ({
 }) => {
   return (
     <BottomSheet
+      style={{
+        shadowColor: '#000000',
+        shadowOffset: {
+          width: 0,
+          height: 3,
+        },
+        shadowOpacity: 0.17,
+        shadowRadius: 3.05,
+        elevation: 4,
+        borderTopEndRadius: 14,
+        borderTopStartRadius: 14,
+      }}
       ref={bottomSheetRef}
       enablePanDownToClose
       index={-1}

@@ -1,5 +1,5 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {signIn} from '../thunks';
+import {signIn, signOut} from '../thunks';
 
 interface IState {
   isLoading: boolean;
@@ -30,6 +30,13 @@ const authSlice = createSlice({
       (state /* , {payload}: PayloadAction<IAuth> */) => {
         state.isLoading = false;
         state.isAuthenticated = true;
+      },
+    );
+    build.addCase(
+      signOut.fulfilled,
+      (state /* , {payload}: PayloadAction<IAuth> */) => {
+        state.isLoading = false;
+        state.isAuthenticated = false;
       },
     );
     build.addCase(signIn.rejected, (state, {error}) => {

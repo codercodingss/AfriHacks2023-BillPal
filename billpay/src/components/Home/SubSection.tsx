@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {Color, FontFamily, FontSize} from '../../common/GlobalStyles';
 
@@ -9,13 +9,15 @@ const SubSection = ({
 }: {
   text: string;
   link: string;
-  navigation: string;
+  navigation: any;
 }) => {
   return (
-    <View style={styles.upComingBill}>
+    <TouchableOpacity
+      onPress={() => navigation.navigate(link)}
+      style={styles.upComingBill}>
       <Text style={[styles.title, styles.shortCutsTypo]}>{text}</Text>
       <Text style={[styles.btn, styles.viewTypo]}>View all</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
 
@@ -25,6 +27,8 @@ const styles = StyleSheet.create({
   upComingBill: {
     alignItems: 'center',
     flexDirection: 'row',
+    width: '90%',
+    justifyContent: 'space-between',
   },
   title: {textAlign: 'left'},
   shortCutsTypo: {
@@ -42,7 +46,6 @@ const styles = StyleSheet.create({
   },
 
   btn: {
-    marginLeft: 157,
     color: Color.accentBase,
     lineHeight: 16,
     fontSize: FontSize.bodyLight1_size,

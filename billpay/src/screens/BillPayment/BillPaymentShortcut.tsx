@@ -48,7 +48,7 @@ const BillPaymentShortcut = ({navigation}: {navigation: any}) => {
   const bottomSheetRef = useRef<BottomSheet>(null);
 
   // variables
-  const snapPoints = useMemo(() => ['25%', '87%'], []);
+  const snapPoints = useMemo(() => ['25%', '60%'], []);
 
   // callbacks
   const handleSheetChanges = useCallback((index: number) => {

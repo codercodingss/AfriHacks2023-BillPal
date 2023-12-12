@@ -9,16 +9,18 @@ import RegisterStepTwo from '../screens/Register/RegisterStepTwo';
 import RegisterStepFour from '../screens/Register/RegisterStepFour';
 import RegistrationFinalStep from '../screens/Register/RegistrationFinalStep';
 import AccountCreationSucces from '../screens/Register/AccountCreationSucces';
+import AfterSplash from '../screens/AfterSplash/AfterSplash';
 
 const Stack = createStackNavigator();
 
 function AuthNavigationContainer() {
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName="AfterSplash"
       screenOptions={{
         headerShown: false,
       }}>
+      <Stack.Screen name="AfterSplash" component={AfterSplash} />
       <Stack.Screen name="Login" component={Login} />
       <Stack.Screen name="ForgotPassword" component={ForgotPassword} />
       <Stack.Screen name="PasswordResetLink" component={PasswordResetLink} />
