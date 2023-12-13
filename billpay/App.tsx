@@ -19,7 +19,7 @@ function App(): React.JSX.Element {
   const {isAuthenticated} = useAppSelector(state => state.auth);
   return (
     <NavigationContainer>
-      {!isAuthenticated ? <HomeTabs /> : <AuthNavigationContainer />}
+      {isAuthenticated ? <HomeTabs /> : <AuthNavigationContainer />}
       <Toast />
     </NavigationContainer>
   );

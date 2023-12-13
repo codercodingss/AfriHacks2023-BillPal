@@ -85,7 +85,11 @@ const BillPayment = ({navigation}: {navigation: any}) => {
         />
       </View>
       <View style={[styles.billsUpdates1, {marginTop: 20}]}>
-        <SubSection text="Transaction history" navigation="nv" link="kk" />
+        <SubSection
+          text="Transaction history"
+          navigation={navigation}
+          link="TransactionHistory"
+        />
         <View style={[styles.upComingBills1, styles.bannersLayout1]}>
           <Text style={[styles.yesterday, styles.yesterdayLayout]}>
             Yesterday
